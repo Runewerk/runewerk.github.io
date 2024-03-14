@@ -3,3 +3,7 @@
 @tailwind utilities;
 
 /* Add any custom styles or Tailwind CSS overrides here */
+
+body {
+    font-family: 'IBM Plex Serif', serif;
+}
