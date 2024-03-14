@@ -5,5 +5,8 @@
 /* Add any custom styles or Tailwind CSS overrides here */
 
 body {
-    font-family: 'IBM Plex Serif', serif;
+    font-family: 'Playfair Display', serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
 }
