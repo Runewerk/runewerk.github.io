@@ -22,16 +22,16 @@
         <div class="container mx-auto px-4 max-w-4xl flex justify-between items-center">
             <nav class="mt-4">
                 <ul class="flex space-x-4">
-                    <li><a href="#" hx-get="welcome.html" hx-target="#content" class="hover:text-gray-300">Inicio</a></li>
-                    <li><a href="#" hx-get="about.html" hx-target="#content" class="hover:text-gray-300">Acerca de</a></li>
-                    <li><a href="#" hx-get="services.html" hx-target="#content" class="hover:text-gray-300">Servicios</a></li>
-                    <li><a href="#" hx-get="contact.html" hx-target="#content" class="hover:text-gray-300">Contacto</a></li>
+                    <li><a href="/" hx-get="html/welcome.html" hx-target="#content" class="hover:text-gray-300">Inicio</a></li>
+                    <li><a href="/about" hx-get="html/about.html" hx-target="#content" class="hover:text-gray-300">Acerca de</a></li>
+                    <li><a href="/services" hx-get="html/services.html" hx-target="#content" class="hover:text-gray-300">Servicios</a></li>
+                    <li><a href="/contact" hx-get="html/contact.html" hx-target="#content" class="hover:text-gray-300">Contacto</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main id="content" class="container mx-auto px-4 py-8 flex-grow max-w-4xl dark:bg-gray-800" hx-get="welcome.html" hx-trigger="load">
+    <main id="content" class="container mx-auto px-4 py-8 flex-grow max-w-4xl dark:bg-gray-800" hx-get="html/welcome.html" hx-trigger="load">
         
     </main>
 
@@ -43,5 +43,6 @@
 
     <script src="https://unpkg.com/htmx.org@1.7.0"></script>
     <script src="js/darkmode.js"></script>
+
 </body>
 </html>
