@@ -45,34 +45,34 @@
     <script src="js/darkmode.js"></script>
     <script>
         // Client-side routing logic
-        function handleRoute() {
-            const path = window.location.hash.slice(1);
-            const target = document.getElementById('content');
+function handleRoute() {
+    const path = window.location.pathname;
+    const target = document.getElementById('content');
 
-            switch (path) {
-                case '/':
-                    htmx.ajax('GET', 'html/welcome.html', target);
-                    break;
-                case '/about':
-                    htmx.ajax('GET', 'html/about.html', target);
-                    break;
-                case '/services':
-                    htmx.ajax('GET', 'html/services.html', target);
-                    break;
-                case '/contact':
-                    htmx.ajax('GET', 'html/contact.html', target);
-                    break;
-                default:
-                    htmx.ajax('GET', '404.html', target);
-                    break;
-            }
-        }
+    switch (path) {
+        case '/':
+            htmx.ajax('GET', 'html/welcome.html', target);
+            break;
+        case '/about':
+            htmx.ajax('GET', 'html/about.html', target);
+            break;
+        case '/services':
+            htmx.ajax('GET', 'html/services.html', target);
+            break;
+        case '/contact':
+            htmx.ajax('GET', 'html/contact.html', target);
+            break;
+        default:
+            htmx.ajax('GET', '404.html', target);
+            break;
+    }
+}
 
-        // Listen for hash change event
-        window.addEventListener('hashchange', handleRoute);
+// Listen for popstate event (browser back/forward buttons)
+window.addEventListener('popstate', handleRoute);
 
-        // Handle initial route
-        handleRoute();
+// Handle initial route
+handleRoute();
     </script>
 
 </body>
