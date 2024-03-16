@@ -44,9 +44,9 @@
     <script src="https://unpkg.com/htmx.org@1.7.0"></script>
     <script src="js/darkmode.js"></script>
     <script>
-        // Client-side routing logic
-function handleRoute() {
-    const path = window.location.pathname;
+// Client-side routing logic
+function handleRoute(url) {
+    const path = url || window.location.pathname;
     const target = document.getElementById('content');
 
     switch (path) {
@@ -66,10 +66,26 @@ function handleRoute() {
             htmx.ajax('GET', '404.html', target);
             break;
     }
+
+    // Update the browser's URL
+    if (url) {
+        window.history.pushState(null, null, url);
+    }
 }
 
 // Listen for popstate event (browser back/forward buttons)
-window.addEventListener('popstate', handleRoute);
+window.addEventListener('popstate', function() {
+    handleRoute();
+});
+
+// Listen for click events on navigation links
+document.addEventListener('click', function(event) {
+    if (event.target.matches('nav a')) {
+        event.preventDefault();
+        const url = event.target.getAttribute('href');
+        handleRoute(url);
+    }
+});
 
 // Handle initial route
 handleRoute();
