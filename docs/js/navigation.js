@@ -1,7 +1,7 @@
-// Function to dynamically load content based on URL path
 function loadContentForPath() {
+    // Adjust the condition to better handle the root path
     const path = window.location.pathname.split('/').pop(); // Gets the last part of the path
-    let contentFile = "welcome.html"; // Default content
+    let contentFile = "welcome.html"; // Assume root path needs welcome.html
 
     if (path === "about") {
         contentFile = "about.html";
@@ -9,13 +9,12 @@ function loadContentForPath() {
         contentFile = "contact.html";
     } else if (path === "services") {
         contentFile = "services.html";
-    } // Add more conditions for other pages as needed
+    }
+    // No need to change contentFile for root, as it defaults to "welcome.html"
 
     htmx.ajax('GET', `docs/${contentFile}`, { target: '#content' });
 }
 
-// Load content for the current path when the page loads
 document.addEventListener('DOMContentLoaded', loadContentForPath);
-
-// Load content for the current path when the history changes
 window.addEventListener('popstate', loadContentForPath);
+
