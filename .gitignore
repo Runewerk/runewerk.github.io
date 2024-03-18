@@ -1,2 +1,5 @@
 .DS_Store
-runewerkwebsite.pdf
+node_modules
+package-lock.json
+package.json
+runewerk.pdf
