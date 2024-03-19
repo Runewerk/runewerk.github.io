@@ -1,87 +1,32 @@
-<html lang="es" class="dark">
+<div id="welcome">
+    <section class="mb-8">
+        <h2 class="text-3xl font-bold mb-4">Bienvenido a Runewerk</h2>
+        <p class="text-lg">Somos una agencia de desarrollo de software especializada en crear soluciones
+            innovadoras para
+            empresas.</p>
+    </section>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Runewerk</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+    <section class="mb-8">
+        <h2 class="text-2xl font-bold mb-4">Nuestros Servicios</h2>
+        <ul class="list-disc list-inside">
+            <li>Desarrollo de Aplicaciones Web</li>
+            <li>Desarrollo de Aplicaciones Móviles</li>
+            <li>Desarrollo de Software Personalizado</li>
+            <li>Consultoría de Software</li>
+        </ul>
+    </section>
 
-<body class="flex flex-col min-h-screen dark:bg-gray-800 dark:text-gray-300"
-    style="font-family: 'Playfair Display', serif;">
-    <header class="bg-gray-900 dark:bg-gray-800 text-white py-4">
-        <div class="container mx-auto px-4 max-w-4xl flex justify-between items-center">
-            <h1 class="text-2xl font-bold">Runewerk</h1>
-            <button id="toggleDarkMode" class="text-gray-300 dark:text-gray-400 hover:text-white focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                </svg>
-            </button>
-        </div>
-        <div class="container mx-auto px-4 max-w-4xl flex justify-between items-center">
-            <nav class="mt-4">
-                <ul class="flex space-x-4">
-                    <li><a href="/welcome" hx-get="welcome.html" hx-target="#content" hx-select="#welcome" hx-swap="innerHTML" hx-push-url="true" class="hover:text-gray-300">Inicio</a></li>
-                    <li><a href="/about" hx-get="about.html" hx-target="#content" hx-select="#about" hx-swap="innerHTML" hx-push-url="true" class="hover:text-gray-300">Acerca de</a></li>
-                    <li><a href="/services" hx-get="services.html" hx-target="#content" hx-select="#services" hx-swap="innerHTML" hx-push-url="true" class="hover:text-gray-300">Servicios</a></li>
-                    <li><a href="/contact" hx-get="contact.html" hx-target="#content" hx-select="#contact" hx-swap="innerHTML" hx-push-url="true" class="hover:text-gray-300">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main id="content" class="container mx-auto px-4 py-8 flex-grow max-w-4xl dark:bg-gray-800">
-        <div id="welcome">
-            <section class="mb-8">
-                <h2 class="text-3xl font-bold mb-4">Bienvenido a Runewerk</h2>
-                <p class="text-lg">Somos una agencia de desarrollo de software especializada en crear soluciones
-                    innovadoras para
-                    empresas.</p>
-            </section>
-
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold mb-4">Nuestros Servicios</h2>
-                <ul class="list-disc list-inside">
-                    <li>Desarrollo de Aplicaciones Web</li>
-                    <li>Desarrollo de Aplicaciones Móviles</li>
-                    <li>Desarrollo de Software Personalizado</li>
-                    <li>Consultoría de Software</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2 class="text-2xl font-bold mb-4">Por qué Elegirnos</h2>
-                <p class="mb-4">En Runewerk, nos enorgullecemos de ofrecer soluciones de software de alta calidad
-                    adaptadas a las
-                    necesidades de nuestros clientes. Nuestro equipo experimentado de desarrolladores y diseñadores
-                    trabaja en
-                    estrecha colaboración con los clientes para comprender sus requisitos y proporcionar soluciones
-                    eficientes y
-                    escalables.</p>
-                <p>Nos mantenemos actualizados con las últimas tecnologías y las mejores prácticas de la industria para
-                    garantizar
-                    que nuestros clientes reciban soluciones de vanguardia.</p>
-            </section>
-        </div>
-    </main>
-
-    <footer class="bg-gray-900 dark:bg-gray-800 text-white py-4 mt-auto">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2024 Runewerk. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-    <script src="https://unpkg.com/htmx.org@1.7.0"></script>
-    <script src="js/darkmode.js"></script>
-    <script src="js/navigation.js"></script>
-
-</body>
-
-</html>
+    <section>
+        <h2 class="text-2xl font-bold mb-4">Por qué Elegirnos</h2>
+        <p class="mb-4">En Runewerk, nos enorgullecemos de ofrecer soluciones de software de alta calidad
+            adaptadas a las
+            necesidades de nuestros clientes. Nuestro equipo experimentado de desarrolladores y diseñadores
+            trabaja en
+            estrecha colaboración con los clientes para comprender sus requisitos y proporcionar soluciones
+            eficientes y
+            escalables.</p>
+        <p>Nos mantenemos actualizados con las últimas tecnologías y las mejores prácticas de la industria para
+            garantizar
+            que nuestros clientes reciban soluciones de vanguardia.</p>
+    </section>
+</div>

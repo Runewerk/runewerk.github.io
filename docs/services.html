@@ -1,102 +1,47 @@
-<html lang="es" class="dark">
+<div id="services">
+    <section class="mb-8">
+        <h3 class="text-2xl font-bold mb-4">Desarrollo de Aplicaciones Web</h3>
+        <p class="mb-4">Nos especializamos en la creación de aplicaciones web de alto rendimiento utilizando
+            tecnologías de
+            vanguardia. Nuestro enfoque se centra en crear soluciones eficientes y escalables que brinden
+            experiencias de
+            usuario excepcionales. Aprovechamos el poder de JavaScript vanilla, Node.js, HTMX y SQL para
+            desarrollar
+            funcionalidades robustas del lado del servidor y del cliente.</p>
+    </section>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Runewerk</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+    <section class="mb-8">
+        <h3 class="text-2xl font-bold mb-4">Desarrollo de Aplicaciones Móviles</h3>
+        <p class="mb-4">Nuestro equipo sobresale en el desarrollo de aplicaciones móviles nativas para las
+            plataformas iOS y
+            Android. Utilizamos Swift para el desarrollo de iOS y Kotlin para el desarrollo de Android para
+            garantizar un
+            rendimiento óptimo y una experiencia de usuario perfecta. Nuestro objetivo es crear aplicaciones
+            móviles
+            rápidas, confiables y adaptadas a los requisitos específicos de su negocio.</p>
+    </section>
 
-<body class="flex flex-col min-h-screen dark:bg-gray-800 dark:text-gray-300"
-    style="font-family: 'Playfair Display', serif;">
-    <header class="bg-gray-900 dark:bg-gray-800 text-white py-4">
-        <div class="container mx-auto px-4 max-w-4xl flex justify-between items-center">
-            <h1 class="text-2xl font-bold">Runewerk</h1>
-            <button id="toggleDarkMode" class="text-gray-300 dark:text-gray-400 hover:text-white focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                </svg>
-            </button>
-        </div>
-        <div class="container mx-auto px-4 max-w-4xl flex justify-between items-center">
-            <nav class="mt-4">
-                <ul class="flex space-x-4">
-                    <li><a href="/welcome" hx-get="welcome.html" hx-target="#content" hx-select="#welcome" hx-swap="innerHTML" hx-push-url="true" class="hover:text-gray-300">Inicio</a></li>
-                    <li><a href="/about" hx-get="about.html" hx-target="#content" hx-select="#about" hx-swap="innerHTML" hx-push-url="true" class="hover:text-gray-300">Acerca de</a></li>
-                    <li><a href="/services" hx-get="services.html" hx-target="#content" hx-select="#services" hx-swap="innerHTML" hx-push-url="true" class="hover:text-gray-300">Servicios</a></li>
-                    <li><a href="/contact" hx-get="contact.html" hx-target="#content" hx-select="#contact" hx-swap="innerHTML" hx-push-url="true" class="hover:text-gray-300">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <section class="mb-8">
+        <h3 class="text-2xl font-bold mb-4">Desarrollo de Software Personalizado</h3>
+        <p class="mb-4">Entendemos que cada negocio tiene necesidades de software únicas. Por eso ofrecemos
+            servicios de
+            desarrollo de software personalizados para crear soluciones que se alineen perfectamente con sus
+            objetivos y
+            procesos. Nuestros experimentados desarrolladores trabajan estrechamente con usted para comprender
+            sus
+            requisitos y entregar software que optimice sus operaciones e impulse el crecimiento.</p>
+    </section>
 
-    <main  id="content" class="container mx-auto px-4 py-8 flex-grow max-w-4xl dark:bg-gray-800">
-        <div id="services">
-            <section class="mb-8">
-                <h3 class="text-2xl font-bold mb-4">Desarrollo de Aplicaciones Web</h3>
-                <p class="mb-4">Nos especializamos en la creación de aplicaciones web de alto rendimiento utilizando
-                    tecnologías de
-                    vanguardia. Nuestro enfoque se centra en crear soluciones eficientes y escalables que brinden
-                    experiencias de
-                    usuario excepcionales. Aprovechamos el poder de JavaScript vanilla, Node.js, HTMX y SQL para
-                    desarrollar
-                    funcionalidades robustas del lado del servidor y del cliente.</p>
-            </section>
-
-            <section class="mb-8">
-                <h3 class="text-2xl font-bold mb-4">Desarrollo de Aplicaciones Móviles</h3>
-                <p class="mb-4">Nuestro equipo sobresale en el desarrollo de aplicaciones móviles nativas para las
-                    plataformas iOS y
-                    Android. Utilizamos Swift para el desarrollo de iOS y Kotlin para el desarrollo de Android para
-                    garantizar un
-                    rendimiento óptimo y una experiencia de usuario perfecta. Nuestro objetivo es crear aplicaciones
-                    móviles
-                    rápidas, confiables y adaptadas a los requisitos específicos de su negocio.</p>
-            </section>
-
-            <section class="mb-8">
-                <h3 class="text-2xl font-bold mb-4">Desarrollo de Software Personalizado</h3>
-                <p class="mb-4">Entendemos que cada negocio tiene necesidades de software únicas. Por eso ofrecemos
-                    servicios de
-                    desarrollo de software personalizados para crear soluciones que se alineen perfectamente con sus
-                    objetivos y
-                    procesos. Nuestros experimentados desarrolladores trabajan estrechamente con usted para comprender
-                    sus
-                    requisitos y entregar software que optimice sus operaciones e impulse el crecimiento.</p>
-            </section>
-
-            <section class="mb-8">
-                <h3 class="text-2xl font-bold mb-4">Consultoría de Software</h3>
-                <p class="mb-4">Nuestros servicios de consultoría de software están diseñados para ayudarlo a navegar
-                    por las
-                    complejidades de la tecnología y tomar decisiones informadas. Analizamos su pila de software
-                    existente,
-                    identificamos áreas de mejora y brindamos orientación experta para simplificar y organizar su
-                    arquitectura de
-                    software. Nuestros consultores trabajan en colaboración con su equipo para desarrollar estrategias
-                    que optimicen
-                    el rendimiento, la escalabilidad y la mantenibilidad.</p>
-            </section>
-        </div>
-    </main>
-
-    <footer class="bg-gray-900 dark:bg-gray-800 text-white py-4 mt-auto">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2024 Runewerk. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-    <script src="https://unpkg.com/htmx.org@1.7.0"></script>
-    <script src="js/darkmode.js"></script>
-    <script src="js/navigation.js"></script>
-
-</body>
-
-</html>
+    <section class="mb-8">
+        <h3 class="text-2xl font-bold mb-4">Consultoría de Software</h3>
+        <p class="mb-4">Nuestros servicios de consultoría de software están diseñados para ayudarlo a navegar
+            por las
+            complejidades de la tecnología y tomar decisiones informadas. Analizamos su pila de software
+            existente,
+            identificamos áreas de mejora y brindamos orientación experta para simplificar y organizar su
+            arquitectura de
+            software. Nuestros consultores trabajan en colaboración con su equipo para desarrollar estrategias
+            que optimicen
+            el rendimiento, la escalabilidad y la mantenibilidad.</p>
+    </section>
+</div>
