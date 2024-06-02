@@ -32,7 +32,7 @@ function toggleDarkModeIcon(isDarkMode) {
 
 // Function to check the user's preferred color scheme
 function checkUserColorScheme() {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (window.matchMedia?.('(prefers-color-scheme: dark)').matches) {
         setDarkModePreference(true);
     } else {
         setDarkModePreference(false);
@@ -40,7 +40,7 @@ function checkUserColorScheme() {
 }
 
 // Check if the dark mode preference is already stored in local storage
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
     const darkModePref = localStorage.getItem('darkMode');
     if (darkModePref !== null) {
         setDarkModePreference(darkModePref === 'true');
