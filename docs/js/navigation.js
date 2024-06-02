@@ -1,6 +1,6 @@
 function loadContentForPath() {
     const path = window.location.pathname.split('/').pop();
-    
+    let contentFile = ""
     if (path === "about" ) {
         contentFile = "about.html";
     } else if (path === "contact") {
