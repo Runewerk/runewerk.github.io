@@ -57,6 +57,25 @@
     </footer>
 
     <script src="https://unpkg.com/htmx.org@1.7.0"></script>
+    <script>
+window.addEventListener('popstate', function() {
+    const hash = window.location.hash;
+    if (hash) {
+        htmx.ajax('GET', 'components.html', '#content', hash);
+    } else {
+        htmx.ajax('GET', 'components.html', '#content', '#welcome');
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const hash = window.location.hash;
+    if (hash) {
+        htmx.ajax('GET', 'components.html', '#content', hash);
+    } else {
+        htmx.ajax('GET', 'components.html', '#content', '#welcome');
+    }
+});
+    </script>
     <script src="./js/darkmode.js"></script>
 </body>
 
