@@ -9,9 +9,11 @@
     }
     h2 {
       @apply text-2xl;
+      @apply mb-2;
     }
     h3 {
       @apply text-xl;
+      @apply mb-2;
     }
     p {
         @apply text-sm;
@@ -19,14 +21,14 @@
   }
 
 body {
-    font-family: 'Fira Code', monospace;
+    font-family: 'Playfair Display', serif;
     font-weight: 500;
     font-optical-sizing: auto;
     font-style: normal;
 }
 
 p {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Fira Code', monospace;
     font-weight: 300;
     font-style: regular;
 }
