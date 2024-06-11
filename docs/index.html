@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="./assets/logo.svg">
-    <title>runewerk</title>
+    <title>Runewerk</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
@@ -16,24 +16,22 @@
 <body class="flex flex-col min-h-screen dark:bg-black dark:text-gray-300">
     <header class="bg-stone-900 text-white py-4">
         <div class="container mx-auto px-4 max-w-4xl flex justify-between items-center">
-            <h1 class="text-4xl"><img src="./assets/logo.svg" alt="Runewerk Logo" class="inline-block h-8 w-auto mr-2">runewerk</h1>
-            <button id="toggleDarkMode" class="text-gray-300 dark:text-gray-400 hover:text-white focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                </svg>
-            </button>
-        </div>
-        <div class="container mx-auto px-4 max-w-4xl flex justify-between items-center">
-            <nav class="mt-4" hx-boost="true">
-                <ul class="flex space-x-4 text-xl">
-                    <li><a href="#" hx-get="components.html" hx-select="#welcome" hx-target="#content" hx-trigger="load, click" class="hover:text-gray-300">Inicio</a></li>
-                    <li><a href="#" hx-get="components.html" hx-select="#about" hx-target="#content" hx-trigger="click"  class="hover:text-gray-300">Acerca de</a></li>
-                    <li><a href="#" hx-get="components.html" hx-select="#services" hx-target="#content" hx-trigger="click"  class="hover:text-gray-300">Servicios</a></li>
-                    <li><a href="#" hx-get="components.html" hx-select="#contact" hx-target="#content" hx-trigger="click"  class="hover:text-gray-300">Contacto</a></li>
+            <a href="#" hx-get="components.html" hx-select="#welcome" hx-target="#content" hx-trigger="click" class="flex items-center">
+                <img src="./assets/logo.svg" alt="Runewerk Logo" class="h-8 w-auto">
+            </a>
+            <nav class="flex-grow text-center" hx-boost="true">
+                <ul class="inline-flex space-x-4 text-lg">
+                    <li><a href="#" hx-get="components.html" hx-select="#welcome" hx-target="#content" hx-trigger="load"></a></li>
+                    <li><a href="#" hx-get="components.html" hx-select="#about" hx-target="#content" hx-trigger="click" class="hover:text-gray-300">Nosotros</a></li>
+                    <li><a href="#" hx-get="components.html" hx-select="#services" hx-target="#content" hx-trigger="click" class="hover:text-gray-300">Servicios</a></li>
+                    <li><a href="#" hx-get="components.html" hx-select="#contact" hx-target="#content" hx-trigger="click" class="hover:text-gray-300">Contacto</a></li>
                 </ul>
             </nav>
+            <button id="toggleDarkMode" class="text-gray-300 dark:text-gray-400 hover:text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+            </button>
         </div>
     </header>
 
