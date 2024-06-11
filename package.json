@@ -1,8 +1,13 @@
 {
-  "scripts":{
-    "build:css": "npx tailwindcss -i ./docs/css/styles.css -o ./docs/css/output.css --minify"
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./docs/css/styles.css -o ./docs/css/output.css --minify",
+    "prestart": "npm run build:css",
+    "start": "node server.js"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.4"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
   }
 }
