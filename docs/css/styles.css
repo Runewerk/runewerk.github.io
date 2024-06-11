@@ -18,7 +18,7 @@
     p {
         @apply text-sm;
     }
-  }
+}
 
   @keyframes blink {
     0%, 49% {
@@ -27,7 +27,7 @@
     50%, 100% {
       opacity: 1;
     }
-  }
+}
 
 body {
     font-family: 'Playfair Display', serif;
@@ -43,10 +43,15 @@ p {
 }
 
 
-  
 .console::after {
     content: ".";
     animation: blink 1s infinite;
     font-family: inherit;
     margin-left: -0.6em;
-  }
+}
+
+.subhead::first-letter {
+    initial-letter: 3;
+    font-weight: bold;
+    margin-right: .75em;
+}

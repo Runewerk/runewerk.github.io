@@ -16,12 +16,11 @@
 <body class="flex flex-col min-h-screen dark:bg-black dark:text-gray-300">
     <header class="bg-stone-900 text-white py-4">
         <div class="container mx-auto px-4 max-w-4xl flex justify-between items-center">
-            <a href="#" hx-get="components.html" hx-select="#welcome" hx-target="#content" hx-trigger="click" class="flex items-center">
+            <a href="#" hx-get="components.html" hx-select="#welcome" hx-target="#content" hx-trigger="load,click" class="flex items-center">
                 <img src="./assets/logo.svg" alt="Runewerk Logo" class="h-8 w-auto">
             </a>
             <nav class="flex-grow text-center" hx-boost="true">
                 <ul class="inline-flex space-x-4 text-lg">
-                    <li><a href="#" hx-get="components.html" hx-select="#welcome" hx-target="#content" hx-trigger="load"></a></li>
                     <li><a href="#" hx-get="components.html" hx-select="#about" hx-target="#content" hx-trigger="click" class="hover:text-gray-300">Nosotros</a></li>
                     <li><a href="#" hx-get="components.html" hx-select="#services" hx-target="#content" hx-trigger="click" class="hover:text-gray-300">Servicios</a></li>
                     <li><a href="#" hx-get="components.html" hx-select="#contact" hx-target="#content" hx-trigger="click" class="hover:text-gray-300">Contacto</a></li>
