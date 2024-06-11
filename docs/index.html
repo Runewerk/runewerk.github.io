@@ -5,7 +5,7 @@
     <title>Runewerk</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/htmx.org@1.9.12"></script>
     <link rel="stylesheet" href="css/output.css">
     <script data-goatcounter="https://runewerk.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
@@ -16,7 +16,7 @@
     style="font-family: 'Playfair Display', serif;">
     <header class="bg-stone-900 text-white py-4">
         <div class="container mx-auto px-4 max-w-4xl flex justify-between items-center">
-            <h1 class="text-2xl font-bold">Runewerk</h1>
+            <h1 class="text-4xl">runewerk</h1>
             <button id="toggleDarkMode" class="text-gray-300 dark:text-gray-400 hover:text-white focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
@@ -27,7 +27,7 @@
         </div>
         <div class="container mx-auto px-4 max-w-4xl flex justify-between items-center">
             <nav class="mt-4" hx-boost="true">
-                <ul class="flex space-x-4">
+                <ul class="flex space-x-4 text-xl">
                     <li><a href="#" hx-get="components.html" hx-select="#welcome" hx-target="#content" hx-trigger="load, click" class="hover:text-gray-300">Inicio</a></li>
                     <li><a href="#" hx-get="components.html" hx-select="#about" hx-target="#content" hx-trigger="click"  class="hover:text-gray-300">Acerca de</a></li>
                     <li><a href="#" hx-get="components.html" hx-select="#services" hx-target="#content" hx-trigger="click"  class="hover:text-gray-300">Servicios</a></li>
