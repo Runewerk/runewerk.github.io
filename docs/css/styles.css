@@ -47,11 +47,4 @@ p {
     content: ".";
     animation: blink 1s infinite;
     font-family: inherit;
-    margin-left: -0.6em;
-}
-
-.subhead::first-letter {
-    initial-letter: 3;
-    font-weight: bold;
-    margin-right: .75em;
 }
