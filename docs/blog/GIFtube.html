@@ -2,7 +2,7 @@
     <article id="blog-content"></article>
     <script>
         if (typeof window.markdown === 'undefined' || window.markdown === null) {
-            const markdown = `
+            const GIFtubeMarkdown = `
 # Introducción
 Una herramienta simple y fácil de usar para convertir videos de YouTube en GIFs de alta calidad. Necesitabamos una forma de personalizar varios aspectos como la resolución, la tasa de fotogramas, los tiempos de inicio/finalización y más, pero la mayoría de las herramientas existentes eran demasiado engorrosas o carecían de estas opciones de personalización.
 Como desarrollador, entendí la frustración de no tener la herramienta adecuada para el trabajo. Es por eso que creé GIFtube, un script de Bash que simplifica el proceso de conversión de videos de YouTube a GIFs mientras proporciona una variedad de opciones de personalización.
@@ -55,10 +55,10 @@ Si encuentras útil GIFtube, por favor dale una estrella al repositorio en GitHu
 
 [GIFtube](https://github.com/Gords/GIFtube)
 `;
-            document.getElementById('blog-content').innerHTML = marked.parse(markdown);
+            document.getElementById('blog-content').innerHTML = marked.parse(GIFtubeMarkdown);
         }
         else {
-            document.getElementById('blog-content').innerHTML = marked.parse(markdown);
+            document.getElementById('blog-content').innerHTML = marked.parse(GIFtubeMarkdown);
 
         }
     </script>
