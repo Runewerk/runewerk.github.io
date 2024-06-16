@@ -26,6 +26,9 @@
     body {
       @apply text-sm;
     }
+    blockquote {
+      @apply text-gray-900;
+    }
 }
 
   @keyframes blink {
@@ -71,8 +74,8 @@ ol {
 
 blockquote {
   margin: 1rem 0;
-  padding: 0.5rem 1rem;
-  border-left: 4px solid #ccc;
+  padding: 0.25rem 1rem;
+  border-left: 0.25rem solid #ccc;
   background-color: #f8f8f8;
 }
 
