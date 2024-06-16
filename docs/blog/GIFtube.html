@@ -1,0 +1,65 @@
+<body>
+    <article id="blog-content"></article>
+    <script>
+        if (typeof window.markdown === 'undefined' || window.markdown === null) {
+            const markdown = `
+# Introducción
+Una herramienta simple y fácil de usar para convertir videos de YouTube en GIFs de alta calidad. Necesitabamos una forma de personalizar varios aspectos como la resolución, la tasa de fotogramas, los tiempos de inicio/finalización y más, pero la mayoría de las herramientas existentes eran demasiado engorrosas o carecían de estas opciones de personalización.
+Como desarrollador, entendí la frustración de no tener la herramienta adecuada para el trabajo. Es por eso que creé GIFtube, un script de Bash que simplifica el proceso de conversión de videos de YouTube a GIFs mientras proporciona una variedad de opciones de personalización.
+
+## Características
+GIFtube viene repleto de varias características:
+* Convierte videos de YouTube a GIFs: proporciona la URL del video de YouTube y GIFtube se encargará del resto.
+* Personaliza la resolución: elige entre opciones de resolución estándar, que incluyen 1080p, 720p, 480p y 240p.
+* Establece la tasa de fotogramas deseada: especifica los fotogramas por segundo (FPS) deseados para el GIF de salida, con un rango recomendado de 10-30 FPS.
+* Especifica el tiempo de inicio y la duración: selecciona el tiempo de inicio exacto y la duración del clip de video que deseas convertir en un GIF.
+* Optimiza el GIF generado: GIFTube utiliza gifsicle para optimizar el gif de salida.
+
+
+## Instalacion y Uso
+Para instalar y usar GIFtube, sigue estos pasos:
+Clone el repositorio de GIFtube desde GitHub:
+> git clone https://github.com/Gords/GIFtube.git
+
+
+Navega a la carpeta del proyecto y haga que el script sea ejecutable:
+> cd GIFtube
+> chmod +x make_gif.sh
+
+Ejecuta el script con:
+> ./make_gif.sh.
+
+Sigue las instrucciones para introducir la URL de YouTube, la tasa de fotogramas deseada, el tiempo de inicio, la duración del clip de video, el nombre de archivo de salida y la resolución.
+
+Esto creará un archivo GIF optimizado llamado optimized_rickroll.gif del video especificado de YouTube, comenzando en 10 segundos, con una duración de 20 segundos, una tasa de fotogramas de 15 FPS y una resolución de 720p.
+
+## Detras de Escenas
+#### GIFtube utiliza varias herramientas y bibliotecas para lograr su funcionalidad:
+
+**yt-dlp**: Una herramienta de línea de comandos utilizada para descargar videos de YouTube.
+
+**ffmpeg**: Una herramienta multimedia que se utiliza para procesar video y audio, incluyendo la generación de GIFs.
+
+**gifsicle**: Una herramienta para optimizar y manipular GIFs.
+
+Estas dependencias se instalan automáticamente en sistemas Ubuntu/Debian o macOS si no están presentes.
+
+## Demo
+
+720p 10fps:
+![sl 500](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXNzNzF3eTMyMmN2d3pjMWViYTRmcDl1cHl5M2lseXd1MTNodHFneCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SSOU8FURY875ach5QV/giphy.gif)
+
+## Conclusión
+GIFtube es una herramienta poderosa pero simple que resuelve el problema de convertir videos de YouTube en GIFs de alta calidad con ajustes personalizables. GIFtube puede optimizar tu flujo de trabajo y proporcionarte el GIF perfecto para tus necesidades.
+Si encuentras útil GIFtube, por favor dale una estrella al repositorio en GitHub y siéntete libre de contribuir o enviar cualquier solicitud de función o informe de errores. ¡Hagamos que GIFtube sea aún mejor juntos!
+
+[GIFtube](https://github.com/Gords/GIFtube)
+`;
+            document.getElementById('blog-content').innerHTML = marked.parse(markdown);
+        }
+        else {
+            document.getElementById('blog-content').innerHTML = marked.parse(markdown);
+
+        }
+    </script>
+</body>
