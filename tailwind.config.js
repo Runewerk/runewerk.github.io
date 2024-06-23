@@ -11,7 +11,7 @@ module.exports = {
         },
       },
       animation: {
-        'hue-rotate': 'hue-rotate 20s linear infinite',
+        'hue-rotate': 'hue-rotate 10s linear infinite',
       },
     },
   },
