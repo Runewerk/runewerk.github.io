@@ -2,6 +2,12 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Always follow this rules:
+- Don't create unnecessary markdown files
+- Don't change variable names
+- Change the existing codebase as little as possible
+- Do not add comments in the code
+
 ## Project Overview
 
 Runewerk is a static website for a software development company, built as a Single Page Application (SPA) using HTMX for dynamic content loading. The site is hosted on GitHub Pages from the `/docs` directory and features a responsive design with dark mode support.
