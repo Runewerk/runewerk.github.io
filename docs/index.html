@@ -1,76 +1,41 @@
+<!DOCTYPE html>
 <html lang="es" class="dark">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="./assets/logo.ico">
     <title>Runewerk</title>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/output.css">
+
+    <!-- HTMX -->
     <script src="https://unpkg.com/htmx.org@1.9.12"></script>
     <script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/preload.js"></script>
-    <link rel="stylesheet" href="css/output.css">
-    <script data-goatcounter="https://runewerk.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
+    <!-- Analytics -->
+    <script data-goatcounter="https://runewerk.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 
 <body hx-ext="preload" class="flex flex-col min-h-screen dark:bg-black dark:text-gray-300">
-    <header class="bg-stone-900 text-white py-4">
-        <div class="container mx-auto px-2 md:px-4 max-w-4xl flex justify-between items-center">
-            <div class="flex items-center justify-between w-full">
-                <a href="#" hx-get="index.html" hx-select="#welcome" hx-target="#content" hx-trigger="load,click"
-                    class="flex">
-                    <img src="./assets/logo.png" alt="Runewerk Logo" class="w-8 h-8">
-                </a>
-                <nav class="flex-grow" hx-boost="true">
-                    <ul class="flex justify-center space-x-2 md:space-x-4 text-base md:text-lg list-none font-['Playfair_Display'] mb-0 ml-0">
-                        <li><a href="#" hx-get="services.html" hx-select="#services" hx-target="#content"
-                                hx-trigger="click" preload="mouseover" preload-images="true"
-                                class="hover:text-gray-300">Servicios</a></li>
-                        <li><a href="#" hx-get="about.html" hx-select="#about" hx-target="#content" 
-                                hx-trigger="click" preload="mouseover" preload-images="true" 
-                                class="hover:text-gray-300">Nosotros</a></li>
-                        <li><a href="#" hx-get="blog.html" hx-select="#blog" hx-target="#content"
-                                hx-trigger="click" preload="mouseover" preload-images="true"
-                                class="hover:text-gray-300">Blog</a></li>
-                        <li><a href="#" hx-get="contact.html" hx-select="#contact" hx-target="#content"
-                                hx-trigger="click" class="hover:text-gray-300">Contacto</a></li>
-                    </ul>
-                </nav>
-                <button id="toggleDarkMode" class="hover:text-gray-300 w-8 h-8 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </header>
+    <!-- Header Component -->
+    <div hx-get="components/header.html" hx-trigger="load" hx-swap="outerHTML"></div>
 
+    <!-- Main Content -->
     <main id="content" class="container mx-auto px-4 py-8 flex-grow max-w-4xl">
-        <!-- welcome section -->
-    <div id="welcome">
-    <img class="w-full mb-4 dark:invert" src="./assets/mastery.jpg" alt="Training in the mountains">
-    <p class="console">
-        Software pragmático y de alta calidad. En un mundo en constante cambio, la búsqueda de soluciones sólidas y
-        confiables es una tarea ardua. Nuestro objetivo es brindarles la tranquilidad de contar con un equipo confiable
-        que comprende sus necesidades, forjando una relación de confianza y respeto mutuo.
-        Nos mantenemos actualizados con las últimas tecnologías y las mejores prácticas de la industria,
-        ofreciendo webs, apps y software óptimo para nuestros clientes</p>
-        </div>
+        <div hx-get="welcome.html" hx-trigger="load" hx-swap="innerHTML"></div>
     </main>
 
-    <footer class="bg-stone-900 text-white py-4 mt-auto">
-        <div class="container mx-auto px-4 text-center">
-            <p class="text-xs md:text-base font-['Playfair_Display']">&copy; 2024 Runewerk. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+    <!-- Footer Component -->
+    <div hx-get="components/footer.html" hx-trigger="load" hx-swap="outerHTML"></div>
+
+    <!-- Scripts -->
     <script src="./js/darkmode.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/13.0.0/marked.min.js"></script>
 </body>
-
 </html>

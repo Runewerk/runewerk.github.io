@@ -20,6 +20,8 @@ function toggleDarkMode() {
 // Function to toggle the dark mode icon
 function toggleDarkModeIcon(isDarkMode) {
 	const toggleDarkModeButton = document.getElementById("toggleDarkMode");
+	if (!toggleDarkModeButton) return; // Button not loaded yet
+
 	const icon = toggleDarkModeButton.querySelector("svg");
 	const iconPath = icon.querySelector("path");
 	if (isDarkMode) {
@@ -52,12 +54,29 @@ function initializeDarkMode() {
 	}
 }
 
-// Check if the dark mode preference is already stored in local storage
+// Function to attach button listener
+function attachDarkModeListener() {
+	const toggleDarkModeButton = document.getElementById("toggleDarkMode");
+	if (toggleDarkModeButton) {
+		toggleDarkModeButton.addEventListener("click", toggleDarkMode);
+	}
+}
+
+// Initialize on page load
 document.addEventListener("DOMContentLoaded", () => {
 	initializeDarkMode();
+	attachDarkModeListener();
+});
 
-	const toggleDarkModeButton = document.getElementById("toggleDarkMode");
-	toggleDarkModeButton.addEventListener("click", toggleDarkMode);
+// Re-attach listener when HTMX loads the header component
+document.body.addEventListener("htmx:afterSwap", (event) => {
+	// Check if header was loaded
+	if (event.detail.target.querySelector("#toggleDarkMode") ||
+	    event.detail.target.id === "toggleDarkMode" ||
+	    event.detail.elt?.querySelector("#toggleDarkMode")) {
+		initializeDarkMode();
+		attachDarkModeListener();
+	}
 });
 
 // Listen for changes in the user's preferred color scheme

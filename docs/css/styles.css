@@ -1,8 +1,11 @@
+/* Tailwind directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Base styles */
 @layer base {
+  /* Typography - Headings */
   h1, h2, h3, h4, h5, h6 {
     @apply font-['Playfair_Display'] font-medium;
     font-optical-sizing: auto;
@@ -28,10 +31,12 @@
     @apply text-base mb-2;
   }
 
+  /* Typography - Body */
   body {
     @apply text-sm font-['Fira_Code'] font-light;
   }
 
+  /* Content elements */
   blockquote {
     @apply text-gray-900 my-4 py-1 px-4 border-l-4 border-gray-500 bg-gray-300;
   }
@@ -53,7 +58,9 @@
   }
 }
 
+/* Custom components */
 @layer components {
+  /* Console-style text with blinking cursor */
   .console::after {
     content: ".";
     @apply animate-blink;
