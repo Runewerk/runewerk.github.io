@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "services": "Servicios",
+    "about": "Nosotros",
+    "blog": "Blog",
+    "contact": "Contacto"
+  },
+  "welcome": {
+    "text": "Software pragmático y de alta calidad. En un mundo en constante cambio, la búsqueda de soluciones sólidas y confiables es una tarea ardua. Nuestro objetivo es brindarles la tranquilidad de contar con un equipo confiable que comprende sus necesidades, forjando una relación de confianza y respeto mutuo. Nos mantenemos actualizados con las últimas tecnologías y las mejores prácticas de la industria, ofreciendo webs, apps y software óptimo para nuestros clientes"
+  },
+  "services": {
+    "title": "Ingeniería de Vanguardia",
+    "web": {
+      "title": "Paginas Web",
+      "description": "Aplicaciones web de alto rendimiento. Nuestro enfoque se centra en crear soluciones eficientes y escalables. Utilizamos HTMX, NextJS, React, JavaScript, Node.js, SQL y los servicios de AWS para desarrollar funcionalidades robustas del lado del servidor y del cliente."
+    },
+    "mobile": {
+      "title": "Aplicaciones Móviles",
+      "description": "Para garantizar el rendimiendo y la mejor experiencia posible, usamos codigo nativo en cada oportunidad que nos sea posible (Swift para iOS, Kotlin para Android). Nuestro objetivo es crear aplicaciones móviles rápidas, confiables y seguras sin dejar de lado la experiencia del usuario."
+    },
+    "desktop": {
+      "title": "Software De Escritorio",
+      "description": "Utilizamos Electron para crear aplicaciones de escritorio. Esto nos permite crear aplicaciones multiplataforma de una forma eficaz y segura, con tecnologia usada por Notion, Slack, Discord, Google Chrome, Firefox y Microsoft Teams, entre otras"
+    }
+  },
+  "about": {
+    "p1": "Runewerk fue fundada por dos desarrolladores con más de 15 años en la industria, que han colaborado con empresas de Alemania, Estados Unidos, Japón, Corea y Paraguay, forjando una visión global del desarrollo de software.",
+    "p2": "Nuestro objetivo es brindar soluciones pragmáticas y eficientes. Evitamos las complejidades innecesarias y nos enfocamos en lo óptimo para cada proyecto.",
+    "p3": "Nuestro compromiso es llegar a la mejor solucion a través de nuestra ética de trabajo y conocimiento técnico. Estamos dedicados a ser un aliado en cada etapa del proyecto"
+  },
+  "blog": {
+    "giftube": "GIFtube: Herramienta de conversión de YouTube a GIFs."
+  },
+  "contact": {
+    "title": "Contacto"
+  },
+  "footer": {
+    "copyright": "© 2024 Runewerk. Todos los derechos reservados."
+  }
+}

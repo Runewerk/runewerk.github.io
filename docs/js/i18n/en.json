@@ -1,0 +1,40 @@
+{
+  "nav": {
+    "services": "Services",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "welcome": {
+    "text": "Pragmatic, high-quality software. In a constantly changing world, finding solid and reliable solutions is a challenging task. Our goal is to provide you with the peace of mind of having a reliable team that understands your needs, forging a relationship of trust and mutual respect. We stay up-to-date with the latest technologies and industry best practices, offering optimal web, apps, and software for our clients"
+  },
+  "services": {
+    "title": "Cutting-Edge Engineering",
+    "web": {
+      "title": "Web Applications",
+      "description": "High-performance web applications. Our approach focuses on creating efficient and scalable solutions. We use HTMX, NextJS, React, JavaScript, Node.js, SQL, and AWS services to develop robust server-side and client-side functionalities."
+    },
+    "mobile": {
+      "title": "Mobile Applications",
+      "description": "To ensure performance and the best possible experience, we use native code whenever possible (Swift for iOS, Kotlin for Android). Our goal is to create fast, reliable, and secure mobile applications without compromising user experience."
+    },
+    "desktop": {
+      "title": "Desktop Software",
+      "description": "We use Electron to create desktop applications. This allows us to build cross-platform applications effectively and securely, with technology used by Notion, Slack, Discord, Google Chrome, Firefox, and Microsoft Teams, among others"
+    }
+  },
+  "about": {
+    "p1": "Runewerk was founded by two developers with over 15 years in the industry, who have collaborated with companies from Germany, the United States, Japan, Korea, and Paraguay, forging a global vision of software development.",
+    "p2": "Our goal is to provide pragmatic and efficient solutions. We avoid unnecessary complexities and focus on what's optimal for each project.",
+    "p3": "Our commitment is to reach the best solution through our work ethic and technical knowledge. We are dedicated to being an ally at every stage of the project"
+  },
+  "blog": {
+    "giftube": "GIFtube: YouTube to GIF conversion tool."
+  },
+  "contact": {
+    "title": "Contact"
+  },
+  "footer": {
+    "copyright": "© 2024 Runewerk. All rights reserved."
+  }
+}
