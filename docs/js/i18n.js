@@ -1,103 +1,105 @@
-// i18n (internationalization) functionality
-let currentLanguage = localStorage.getItem('language') || 'es';
+const LANGUAGE_STORAGE_KEY = "language";
+const DEFAULT_LANGUAGE = "es";
+const LANGUAGE_BUTTON_SELECTOR = "#toggleLanguage";
+
+let currentLanguage = readStoredLanguage();
 let translations = {};
-let languageListenerAttached = false;
 
-// Load translations for a given language
-async function loadTranslations(lang) {
+function readStoredLanguage() {
+	const storedLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY);
+	return storedLanguage === "en" ? "en" : DEFAULT_LANGUAGE;
+}
+
+async function loadTranslations(language) {
 	try {
-		const response = await fetch(`./js/i18n/${lang}.json`);
+		const response = await fetch(`./js/i18n/${language}.json`);
+		if (!response.ok) {
+			throw new Error(`HTTP ${response.status}`);
+		}
+
 		translations = await response.json();
-		return translations;
 	} catch (error) {
-		console.error(`Failed to load translations for ${lang}:`, error);
-		return {};
+		console.error(`Failed to load translations for ${language}:`, error);
+		translations = {};
 	}
 }
 
-// Get nested translation by key path (e.g., "nav.services")
 function getTranslation(key) {
-	const keys = key.split('.');
-	let value = translations;
+	const translation = key
+		.split(".")
+		.reduce(
+			(value, segment) =>
+				value && typeof value === "object" ? value[segment] : null,
+			translations,
+		);
 
-	for (const k of keys) {
-		if (value && typeof value === 'object') {
-			value = value[k];
-		} else {
-			return key; // Return key if translation not found
-		}
-	}
-
-	return value || key;
+	return translation || key;
 }
 
-// Update all elements with data-i18n attribute (excluding language button)
-function updatePageTranslations() {
-	document.querySelectorAll('[data-i18n]').forEach(element => {
-		// Skip the language toggle button
-		if (element.id === 'toggleLanguage') return;
+function renderTranslations() {
+	if (!Object.keys(translations).length) {
+		return;
+	}
 
-		const key = element.getAttribute('data-i18n');
-		const translation = getTranslation(key);
-
-		if (translation) {
-			element.textContent = translation;
+	document.querySelectorAll("[data-i18n]").forEach((element) => {
+		if (element.id === "toggleLanguage") {
+			return;
 		}
+
+		element.textContent = getTranslation(element.dataset.i18n || "");
 	});
 
-	// Update HTML lang attribute
-	document.documentElement.setAttribute('lang', currentLanguage);
+	document.documentElement.lang = currentLanguage;
 }
 
-// Switch language
-async function switchLanguage(lang) {
-	if (lang === currentLanguage) return;
-
-	currentLanguage = lang;
-	localStorage.setItem('language', lang);
-
-	await loadTranslations(lang);
-	updatePageTranslations();
-	updateLanguageButton();
-}
-
-// Update language button flag emoji
-function updateLanguageButton() {
-	const button = document.getElementById('toggleLanguage');
-	if (button) {
-		// Show opposite flag (if Spanish, show UK flag to switch to English)
-		button.textContent = currentLanguage === 'es' ? '🇬🇧' : '🇪🇸';
+function renderLanguageButton() {
+	const button = document.querySelector(LANGUAGE_BUTTON_SELECTOR);
+	if (!button) {
+		return;
 	}
+
+	const spanishIsActive = currentLanguage === "es";
+	button.textContent = spanishIsActive ? "🇬🇧" : "🇪🇸";
+	button.setAttribute(
+		"aria-label",
+		spanishIsActive ? "Switch language to English" : "Cambiar idioma a español",
+	);
 }
 
-// Attach language toggle listener (only once)
-function attachLanguageListener() {
-	if (languageListenerAttached) return;
+async function applyLanguage(language) {
+	const safeLanguage = language === "en" ? "en" : "es";
+	currentLanguage = safeLanguage;
+	localStorage.setItem(LANGUAGE_STORAGE_KEY, safeLanguage);
+	await loadTranslations(safeLanguage);
+	renderTranslations();
+	renderLanguageButton();
+}
 
-	const toggleButton = document.getElementById('toggleLanguage');
-	if (toggleButton) {
-		toggleButton.addEventListener('click', () => {
-			const newLang = currentLanguage === 'es' ? 'en' : 'es';
-			switchLanguage(newLang);
-		});
-		languageListenerAttached = true;
+function toggleLanguage() {
+	const nextLanguage = currentLanguage === "es" ? "en" : "es";
+	applyLanguage(nextLanguage);
+}
+
+function handleLanguageToggle(event) {
+	if (!(event.target instanceof Element)) {
+		return;
 	}
+
+	if (!event.target.closest(LANGUAGE_BUTTON_SELECTOR)) {
+		return;
+	}
+
+	event.preventDefault();
+	toggleLanguage();
 }
 
-// Initialize i18n
-async function initializeI18n() {
-	await loadTranslations(currentLanguage);
-	updatePageTranslations();
-	updateLanguageButton();
-	attachLanguageListener();
+function handleHtmxSwap() {
+	renderTranslations();
+	renderLanguageButton();
 }
 
-// Re-initialize when content is loaded via HTMX
-document.body.addEventListener('htmx:afterSwap', () => {
-	updatePageTranslations();
-	updateLanguageButton();
-	attachLanguageListener();
+document.addEventListener("DOMContentLoaded", () => {
+	applyLanguage(currentLanguage);
 });
-
-// Initialize on page load
-document.addEventListener('DOMContentLoaded', initializeI18n);
+document.addEventListener("click", handleLanguageToggle);
+document.addEventListener("htmx:afterSwap", handleHtmxSwap);

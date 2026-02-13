@@ -8,15 +8,19 @@ The project is organized as follows:
 
 - `/docs`: Contains the main website files
   - `index.html`: The main entry point of the website
-  - `components.html`: Holds various page sections (about, services, etc.)
+  - `/components`: Shared header fragment
   - `/css`: Stylesheets
     - `styles.css`: Tailwind CSS source file
     - `output.css`: Compiled and minified CSS
   - `/js`: JavaScript files
-    - `darkmode.js`: Handles dark mode functionality
+    - `darkmode.js`: Dark mode behavior
+    - `i18n.js`: Language switching and translations
+    - `blog.js`: Markdown blog loader
+  - `/blog/posts`: Markdown blog posts
+  - `/blog/posts.json`: Generated markdown post manifest
   - `/assets`: Images and other static assets
-  - `/blog`: Blog post HTML files
 - `server.js`: A simple Express server for local development
+- `/scripts/generate-posts-manifest.js`: Generates `docs/blog/posts.json`
 - `tailwind.config.js`: Tailwind CSS configuration
 - `package.json`: Project dependencies and scripts
 
@@ -35,9 +39,9 @@ The project is organized as follows:
    ```
    npm install
    ```
-3. Build the CSS:
+3. Build the site assets:
    ```
-   npm run build:css
+   npm run build
    ```
 4. Start the development server:
    ```

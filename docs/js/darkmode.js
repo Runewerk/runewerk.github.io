@@ -1,85 +1,66 @@
-// Function to set the dark mode preference
-function setDarkModePreference(isDarkMode) {
-	const html = document.documentElement;
-	if (isDarkMode) {
-		html.classList.add("dark");
-		localStorage.theme = "dark";
-	} else {
-		html.classList.remove("dark");
-		localStorage.theme = "light";
-	}
-	toggleDarkModeIcon(isDarkMode);
+const DARK_CLASS = "dark";
+const THEME_STORAGE_KEY = "theme";
+const TOGGLE_BUTTON_SELECTOR = "#toggleDarkMode";
+const SUN_ICON_PATH =
+	"M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z";
+const MOON_ICON_PATH =
+	"M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z";
+
+const systemThemeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+function readStoredTheme() {
+	const storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+	return storedTheme === "dark" || storedTheme === "light" ? storedTheme : null;
 }
 
-// Function to toggle the dark mode
-function toggleDarkMode() {
-	const isDarkMode = !document.documentElement.classList.contains("dark");
-	setDarkModePreference(isDarkMode);
+function getCurrentTheme() {
+	return readStoredTheme() || (systemThemeMediaQuery.matches ? "dark" : "light");
 }
 
-// Function to toggle the dark mode icon
-function toggleDarkModeIcon(isDarkMode) {
-	const toggleDarkModeButton = document.getElementById("toggleDarkMode");
-	if (!toggleDarkModeButton) return; // Button not loaded yet
+function renderTheme(theme) {
+	const isDarkTheme = theme === "dark";
+	document.documentElement.classList.toggle(DARK_CLASS, isDarkTheme);
 
-	const icon = toggleDarkModeButton.querySelector("svg");
-	const iconPath = icon.querySelector("path");
-	if (isDarkMode) {
-		// Switch to light mode icon
-		iconPath.setAttribute(
-			"d",
-			"M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z",
-		);
-	} else {
-		// Switch to dark mode icon
-		iconPath.setAttribute(
-			"d",
-			"M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z",
-		);
+	const iconPath = document.querySelector(`${TOGGLE_BUTTON_SELECTOR} svg path`);
+	if (iconPath) {
+		iconPath.setAttribute("d", isDarkTheme ? SUN_ICON_PATH : MOON_ICON_PATH);
 	}
 }
 
-// Function to initialize dark mode
-function initializeDarkMode() {
-	if (
-		localStorage.theme === "dark" ||
-		(!("theme" in localStorage) &&
-			window.matchMedia("(prefers-color-scheme: dark)").matches)
-	) {
-		document.documentElement.classList.add("dark");
-		toggleDarkModeIcon(true);
-	} else {
-		document.documentElement.classList.remove("dark");
-		toggleDarkModeIcon(false);
-	}
+function syncTheme() {
+	renderTheme(getCurrentTheme());
 }
 
-// Function to attach button listener
-function attachDarkModeListener() {
-	const toggleDarkModeButton = document.getElementById("toggleDarkMode");
-	if (toggleDarkModeButton) {
-		toggleDarkModeButton.addEventListener("click", toggleDarkMode);
-	}
+function toggleTheme() {
+	const nextTheme = document.documentElement.classList.contains(DARK_CLASS)
+		? "light"
+		: "dark";
+	localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+	renderTheme(nextTheme);
 }
 
-// Initialize on page load
-document.addEventListener("DOMContentLoaded", () => {
-	initializeDarkMode();
-	attachDarkModeListener();
-});
-
-// Re-attach listener when HTMX loads the header component
-document.body.addEventListener("htmx:afterSwap", (event) => {
-	// Check if header was loaded
-	if (event.detail.target.querySelector("#toggleDarkMode") ||
-	    event.detail.target.id === "toggleDarkMode" ||
-	    event.detail.elt?.querySelector("#toggleDarkMode")) {
-		initializeDarkMode();
-		attachDarkModeListener();
+function handleThemeToggle(event) {
+	if (!(event.target instanceof Element)) {
+		return;
 	}
-});
 
-// Listen for changes in the user's preferred color scheme
-window
-	.matchMedia("(prefers-color-scheme: dark)")
-	.addEventListener("change", initializeDarkMode);
+	if (!event.target.closest(TOGGLE_BUTTON_SELECTOR)) {
+		return;
+	}
+
+	event.preventDefault();
+	toggleTheme();
+}
+
+function handleSystemThemeChange(event) {
+	if (readStoredTheme()) {
+		return;
+	}
+
+	renderTheme(event.matches ? "dark" : "light");
+}
+
+document.addEventListener("DOMContentLoaded", syncTheme);
+document.addEventListener("htmx:afterSwap", syncTheme);
+document.addEventListener("click", handleThemeToggle);
+systemThemeMediaQuery.addEventListener("change", handleSystemThemeChange);

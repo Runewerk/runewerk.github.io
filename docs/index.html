@@ -14,6 +14,12 @@
     <!-- Styles -->
     <link rel="stylesheet" href="css/output.css">
 
+    <!-- Preload non-blog images -->
+    <link rel="preload" as="image" href="./assets/logo.png">
+    <link rel="preload" as="image" href="./assets/mastery.jpg">
+    <link rel="preload" as="image" href="./assets/knightcompress.jpeg">
+    <link rel="preload" as="image" href="./assets/carmack.jpeg">
+
     <!-- HTMX -->
     <script src="https://unpkg.com/htmx.org@1.9.12"></script>
     <script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/preload.js"></script>
@@ -27,16 +33,14 @@
     <div hx-get="components/header.html" hx-trigger="load" hx-swap="outerHTML"></div>
 
     <!-- Main Content -->
-    <main id="content" class="container mx-auto px-4 py-8 flex-grow max-w-4xl">
+    <main id="content" aria-live="polite" class="content-shell container mx-auto px-4 py-8 flex-grow max-w-4xl">
         <div hx-get="welcome.html" hx-trigger="load" hx-swap="innerHTML"></div>
     </main>
-
-    <!-- Footer Component -->
-    <div hx-get="components/footer.html" hx-trigger="load" hx-swap="outerHTML"></div>
 
     <!-- Scripts -->
     <script src="./js/i18n.js"></script>
     <script src="./js/darkmode.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/13.0.0/marked.min.js"></script>
+    <script src="./js/blog.js"></script>
 </body>
 </html>

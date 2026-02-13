@@ -1,31 +1,40 @@
-<header class="bg-stone-900 text-white py-4">
+<header class="bg-stone-900 text-white py-4" hx-target="#content" hx-swap="innerHTML">
     <div class="container mx-auto px-2 md:px-4 max-w-4xl">
-        <div class="flex items-center">
-            <!-- Logo (fixed width) -->
-            <a href="#" hx-get="welcome.html" hx-target="#content" hx-trigger="click" class="flex w-8 shrink-0">
+        <div class="flex items-center gap-2">
+            <a href="#" hx-get="welcome.html" class="flex w-8 shrink-0" aria-label="Runewerk Home">
                 <img src="./assets/logo.png" alt="Runewerk Logo" class="w-8 h-8">
             </a>
 
-            <!-- Navigation (centered, takes up remaining space) -->
             <nav class="flex-1 flex justify-center">
                 <ul class="flex space-x-2 md:space-x-4 text-base md:text-lg list-none font-['Playfair_Display'] mb-0 ml-0">
-                    <li><a href="#" hx-get="services.html" hx-target="#content" hx-trigger="click"
-                           preload="mouseover" preload-images="true" class="hover:text-gray-300" data-i18n="nav.services">Servicios</a></li>
-                    <li><a href="#" hx-get="about.html" hx-target="#content" hx-trigger="click"
-                           preload="mouseover" preload-images="true" class="hover:text-gray-300" data-i18n="nav.about">Nosotros</a></li>
-                    <li><a href="#" hx-get="blog.html" hx-target="#content" hx-trigger="click"
-                           preload="mouseover" preload-images="true" class="hover:text-gray-300" data-i18n="nav.blog">Blog</a></li>
-                    <li><a href="#" hx-get="contact.html" hx-target="#content" hx-trigger="click"
-                           class="hover:text-gray-300" data-i18n="nav.contact">Contacto</a></li>
+                    <li>
+                        <a href="#" hx-get="services.html" preload="preload:init" preload-images="true" class="nav-link" data-i18n="nav.services">
+                            Servicios
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" hx-get="about.html" preload="preload:init" preload-images="true" class="nav-link" data-i18n="nav.about">
+                            Nosotros
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" hx-get="blog.html" preload="preload:init" preload-images="true" class="nav-link" data-i18n="nav.blog">
+                            Blog
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" hx-get="contact.html" preload="preload:init" preload-images="true" class="nav-link" data-i18n="nav.contact">
+                            Contacto
+                        </a>
+                    </li>
                 </ul>
             </nav>
 
-            <!-- Controls (fixed width to match logo) -->
-            <div class="flex items-center gap-2 w-8 shrink-0 justify-end">
-                <button id="toggleLanguage" class="hover:text-gray-300 w-8 h-8 flex items-center justify-center text-2xl grayscale hover:grayscale-0 transition-all" title="Toggle language">
+            <div class="flex items-center gap-2 shrink-0">
+                <button type="button" id="toggleLanguage" class="language-button" title="Toggle language" aria-label="Switch language">
                     🇬🇧
                 </button>
-                <button id="toggleDarkMode" class="hover:text-gray-300 w-8 h-8 flex items-center justify-center">
+                <button type="button" id="toggleDarkMode" class="icon-button" title="Toggle dark mode" aria-label="Toggle dark mode">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                               d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />

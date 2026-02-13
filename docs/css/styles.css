@@ -65,4 +65,36 @@
     content: ".";
     @apply animate-blink;
   }
+
+  .nav-link {
+    @apply hover:text-gray-300;
+  }
+
+  .icon-button {
+    @apply hover:text-gray-300 w-8 h-8 flex items-center justify-center;
+  }
+
+  .language-button {
+    @apply icon-button text-2xl grayscale hover:grayscale-0 transition-all;
+  }
+
+  .social-link {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-stone-900 dark:bg-stone-800 text-white rounded-lg hover:bg-stone-800 dark:hover:bg-stone-700 transition-colors w-64;
+  }
+
+  .social-link-icon {
+    @apply w-6 h-6;
+  }
+
+  .social-link-label {
+    @apply font-['Playfair_Display'] text-lg;
+  }
+
+  .content-image {
+    @apply w-full mb-4;
+  }
+
+  .content-shell {
+    min-height: clamp(28rem, 68vh, 44rem);
+  }
 }

@@ -1,13 +1,12 @@
-<div id="blog">
-    <div class="container mx-auto">
-        <ul>
-            <li>
-                <a href="#" hx-get="./blog/GIFtube.html" hx-target="#blog" hx-trigger="click"
-                   preload="mouseover" preload-images="true" class="hover:text-gray-500" data-i18n="blog.giftube">
-                    GIFtube: Herramienta de conversión de YouTube a GIFs.
-                </a>
-            </li>
-            <!-- Add more blog post links as needed -->
-        </ul>
+<section id="blog">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <aside>
+            <h2 class="mb-4">Posts</h2>
+            <ul id="blog-post-list"></ul>
+        </aside>
+
+        <article id="blog-content" class="md:col-span-2">
+            <p>Select a post to read.</p>
+        </article>
     </div>
-</div>
+</section>
